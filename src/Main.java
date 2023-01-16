@@ -13,6 +13,8 @@ public class Main {
 //        readFromFile();
     }
 
+    private static String[] tabName = {"Adam", "Ewa", "Bogdan", "Monika", "Dawid"};
+
     private static void readNameAndLength() {
         File file = new File("names.txt");
         Scanner scanner = null;
@@ -38,7 +40,6 @@ public class Main {
     }
 
     private static void writeNameAndLength() {
-        String[] tabName = {"Adam", "Ewa", "Bogdan", "Monika", "Dawid"};
         File file = new File("names.txt");
         PrintWriter printWriter = null;
         try {
