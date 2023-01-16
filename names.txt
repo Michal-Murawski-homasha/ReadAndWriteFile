@@ -1,0 +1,5 @@
+Adam 4
+Ewa 3
+Bogdan 6
+Monika 6
+Dawid 5
