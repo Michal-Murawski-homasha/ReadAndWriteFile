@@ -13,9 +13,14 @@ public class Main {
 //        readFromFile();
     }
 
-    private static void readNameAndLength() throws FileNotFoundException {
+    private static void readNameAndLength() {
         File file = new File("names.txt");
-        Scanner scanner = new Scanner(file);
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         String[] tabName = new String[5];
         Integer[] tabLength = new Integer[5];
         for (int i = 0; i < 5; i++) {
@@ -32,10 +37,15 @@ public class Main {
         System.out.println("Tablica z długością imion: " + Arrays.toString(tabLength));
     }
 
-    private static void writeNameAndLength() throws FileNotFoundException {
+    private static void writeNameAndLength() {
         String[] tabName = {"Adam", "Ewa", "Bogdan", "Monika", "Dawid"};
         File file = new File("names.txt");
-        PrintWriter printWriter = new PrintWriter(file);
+        PrintWriter printWriter = null;
+        try {
+            printWriter = new PrintWriter(file);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         for (int i = 0; i < tabName.length; i++) {
             String writeNameAndAge = tabName[i] + " " + tabName[i].length();
             printWriter.println(writeNameAndAge);
